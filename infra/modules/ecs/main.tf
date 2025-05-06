@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "task_family" {
 
   container_definitions = jsonencode([
     {
-      name      = "crud_family"
+      name      = var.ecs_container_name
       image     = var.repository_url
       portMappings = [
         {
@@ -50,7 +50,7 @@ resource "aws_ecs_service" "this" {
 
   load_balancer {
     target_group_arn = var.alb_target_group_arn
-    container_name   = var.ecs_container_name
+    container_name   = container_definitions.name
     container_port   = 80
   }
 
