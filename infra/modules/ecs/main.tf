@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "task_family" {
 
   container_definitions = jsonencode([
     {
-      name      = var.ecs_container_name
+      name      = "crud_family"
       image     = var.repository_url
       portMappings = [
         {
