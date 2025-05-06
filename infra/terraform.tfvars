@@ -15,5 +15,5 @@ log_group_name = "ecs-log-group"
 ecs_cluster_name = "crud-cluster"
 ecs_task_family = "crud-family"
 ecs_container_name = "crud container"
-ecs_service_name = "crud service"
+ecs_service_name = "crud-service"
 retention_in_days = 7
